@@ -4,31 +4,29 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Intro to HTML and CSS</title>
+    <title>HTML & CSS for Beginners</title>
 
-    <meta name="description" content="An introduction to HTML and CSS">
+    <meta name="description" content="Introduction to HTML and CSS workshop">
     <meta name="author" content="Dev Bootcamp">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/blood.css" id="theme">
 
-    <!-- For syntax highlighting -->
+    <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
-    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <!-- Printing and PDF exports -->
     <script>
-      if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-      }
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
 
     <style>
@@ -46,11 +44,11 @@
 
   <body>
 
-    <div class="reveal">
+<div class="reveal">
 
       <div class="slides">
         <section>
-          <h1>Intro to HTML &amp; CSS</h1>
+          <h1>Intro to<br>HTML &amp; CSS</h1>
           <h3>The web is waiting.</h3>
           <p>
             <small>Brought to you by <a href="http://devbootcamp.com">Dev Bootcamp</a></small>
@@ -77,6 +75,7 @@
             <li>What do you want to get out of this session?</li>
             <li>What's <strong>something quirky</strong> about you?</li>
           </ul>
+          <aside class="notes">First introduce teacher and TAs.</aside>
         </section>
 
         <section>
@@ -94,12 +93,8 @@
         </section>
 
         <section>
-          <h2>Disclaimer!</h2>
-        </section>
-
-        <!-- HTML and CSS and the role they play in the web (5min) -->
-        <section>
           <h2>HTML and CSS: Together at Last</h2>
+          <aside class="notes">HTML and CSS and the role they play in the web (5min)</aside>
         </section>
 
         <section>
@@ -112,6 +107,7 @@
           <h2>What is HTML?</h2>
           <p>You can right-click and press <strong>View Source</strong> on any webpage to see this code.</p>
           <img src="img/devbootsource.png"/>
+          <aside class="notes">Give an example of this in Chrome</aside>
         </section>
 
         <section>
@@ -265,8 +261,19 @@
     <img src="images/my-photo.jpg" />
               </code>
             </pre>
+        </section>
+
+        <section>
+          <h2>Breaking it down</h2>
           <p><strong>Attributes</strong> go inside the opening tag, just before the right angle bracket.</p>
-          <p><strong>Values</strong> are assigned to an attribute, and must be contained in quotes.</p>
+          <p><strong>Values</strong> are assigned to an attribute, and must be in quotes.</p>
+          <pre>
+            <code class="html">
+    <a href="http://google.com">Google</a>
+
+    <img src="images/my-photo.jpg" />
+            </code>
+          </pre>
         </section>
 
         <section>
@@ -323,13 +330,14 @@
         <section>
           <h1>omg let's build.</h1>
           <p><a href="http://bit.ly/html-css-intro">http://bit.ly/html-css-intro</a></p>
+          <aside class="notes">Let's build a website using only HTML tags</aside>
         </section>
 
         <section>
           <h2>Common elements: links</h2>
           <p>A link has three main elements:</p>
           <ul>
-            <li><strong>&lt;a&gt;</strong> - the tag.</li>
+            <li><strong>&lt;a&gt;&lt;a/&gt;</strong> - the tags.</li>
             <li><strong>href attribute</strong> - the link url. (http://devbootcamp.com)</li>
             <li><strong>content</strong> - the text you see. (Dev Bootcamp)</li>
           </ul>
@@ -499,6 +507,11 @@
         <!-- A quick demo of positioning (10min) -->
         <section>
           <h2>Thanks for joining us!</h2>
+          <aside class="notes">
+            A quick demo of parent and hierarchical property inheritance (5min)<br>
+            Examples of some common CSS properties and values (5min)<br>
+            DEMO : Either change your website with colors and images, or play with a prebuilt site
+          </aside>
         </section>
         <!-- A quick demo of parent and hierarchical property inheritance (5min) -->
         <!-- Examples of some common CSS properties and values (5min) -->
@@ -509,11 +522,11 @@
     </div>
 
     <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.min.js"></script>
+    <script src="js/reveal.js"></script>
 
     <script>
 
-      // Full list of configuration options available here:
+      // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         controls: true,
@@ -521,21 +534,16 @@
         history: true,
         center: true,
 
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-        // Parallax scrolling
-        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-        // parallaxBackgroundSize: '2100px 900px',
-
-        // Optional libraries used to extend on reveal.js
+        // Optional reveal.js plugins
         dependencies: [
           { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
         ]
       });
 
